@@ -240,7 +240,7 @@
 
 
 
-import React, { useState, useEffect } from 'react'; 
+import React, { useState, useEffect } from 'react';
 import { Eye, EyeOff } from 'lucide-react';
 import { Link, useNavigate } from 'react-router-dom';
 
@@ -272,9 +272,9 @@ const Signin = () => {
       subtitle: "Prosessional Dashboard for Analytics"
     },
     {
-      image: "/api/placeholder/1200/900",
-      title: "Document Life,",
-      subtitle: "One Click at a Time"
+      image: "slide.png",
+      title: "Powered By ,",
+      subtitle: "GAIA Boards Variant"
     }
   ];
 
@@ -297,19 +297,15 @@ const Signin = () => {
   const handleSubmit = (e) => {
     e.preventDefault();
     
-    // Check credentials
     if (formData.email === VALID_CREDENTIALS.email && 
         formData.password === VALID_CREDENTIALS.password) {
-      // Set authentication in localStorage
       localStorage.setItem('isAuthenticated', 'true');
-      // Redirect to dashboard
       navigate('/dashboard');
     } else {
       setError('Invalid email or password');
     }
   };
 
-  // Check if user is already authenticated
   useEffect(() => {
     if (localStorage.getItem('isAuthenticated') === 'true') {
       navigate('/dashboard');
@@ -338,13 +334,18 @@ const Signin = () => {
                 className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
               />
             </div>
-            <div className="relative h-full flex flex-col justify-end p-12 text-white">
-              <h2 className="text-4xl font-semibold mb-2">{slide.title}</h2>
-              <h2 className="text-4xl font-semibold mb-8">{slide.subtitle}</h2>
+            <div className="relative h-full flex flex-col justify-end p-12">
+              {/* Added gradient background for text area */}
+              <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black/50 to-transparent" />
+              {/* Text content positioned above gradient */}
+              <div className="relative z-10 text-white">
+                <h2 className="text-4xl font-semibold mb-2 text-shadow">{slide.title}</h2>
+                <h2 className="text-4xl font-semibold mb-8 text-shadow">{slide.subtitle}</h2>
+              </div>
             </div>
           </div>
         ))}
-        <div className="absolute bottom-12 left-12 flex gap-3">
+        <div className="absolute bottom-12 left-12 flex gap-3 z-20">
           {slides.map((_, index) => (
             <button
               key={index}
