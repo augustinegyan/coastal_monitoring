@@ -6,7 +6,7 @@ function HeroSection() {
     <div className="relative min-h-[600px] w-full flex items-center hero-text">
       {/* Background Image */}
       <div 
-        className="absolute inset-0 bg-[url('ocean.jpg')] bg-cover bg-center bg-no-repeat"
+        className="absolute inset-0 bg-[url('/ocean.jpg')] bg-cover bg-center bg-no-repeat"
         aria-hidden="true"
       />
       
