@@ -1,28 +1,38 @@
+
 import React from 'react';
-import '../index.css';  // Make sure to import your CSS file if it's not already imported.
 
 function HeroSection() {
   return (
-    <section
-      className="relative bg-cover bg-center h-[80vh] flex items-center text-left"
-      style={{ backgroundImage: `url('/ocean.jpg')` }}
-    >
-      {/* Overlay for darkening the background */}
-      <div className="absolute inset-0 bg-black opacity-50"></div>
+    <div className="relative min-h-[600px] w-full flex items-center hero-text">
+      {/* Background Image */}
+      <div 
+        className="absolute inset-0 bg-[url('ocean.jpg')] bg-cover bg-center bg-no-repeat"
+        aria-hidden="true"
+      />
       
-      {/* Main Content */}
-      <div className="relative z-10 text-white max-w-2xl ml-8 md:ml-16 lg:ml-24 hero-text">
-        <h1 className="text-4xl md:text-6xl font-bold uppercase">
-          Coastal Monitoring System
-        </h1>
-        <p className="mt-4 text-lg md:text-xl lg:text-2xl">
-          Real-time Monitoring of Tides, Water Quality, and Coastal Conditions to Preserve and Protect Our Oceans
-        </p>
-        <button className="mt-6 px-8 py-3 bg-blue-500 hover:bg-blue-600 text-white font-semibold rounded">
-          Learn More
-        </button>
+      {/* Overlay */}
+      <div 
+        className="absolute inset-0 bg-black/50"
+        aria-hidden="true"
+      />
+      
+      {/* Content Container */}
+      <div className="relative z-10 w-full">
+        <div className="max-w-3xl pl-4 sm:pl-8 lg:pl-16">
+          <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
+            COASTAL MONITORING SYSTEM
+          </h1>
+          
+          <p className="text-base sm:text-lg md:text-xl lg:text-xl text-white/90 mb-6 sm:mb-8 max-w-2xl">
+            Real-time Monitoring of Tides, Water Quality, and Coastal Conditions to Preserve and Protect Our Oceans
+          </p>
+          
+          <button className="bg-blue-600 hover:bg-blue-700 text-white font-semibold px-6 sm:px-8 py-2.5 sm:py-3 rounded-lg text-base sm:text-lg transition-colors duration-200">
+            Learn More
+          </button>
+        </div>
       </div>
-    </section>
+    </div>
   );
 }
 
