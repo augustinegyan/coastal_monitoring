@@ -1,5 +1,6 @@
 
 import React from 'react';
+import  '../index.css';
 
 function HeroSection() {
   return (
@@ -17,7 +18,7 @@ function HeroSection() {
       />
       
       {/* Content Container */}
-      <div className="relative z-10 w-full">
+      <div className="relative z-10 w-full hero-text">
         <div className="max-w-3xl pl-4 sm:pl-8 lg:pl-16">
           <h1 className="text-3xl sm:text-4xl md:text-4xl lg:text-5xl font-bold text-white mb-4 sm:mb-6">
             COASTAL MONITORING SYSTEM

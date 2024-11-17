@@ -2,7 +2,7 @@ import React, { useState } from 'react';
 
 const Header = () => {
   const [isRedirecting, setIsRedirecting] = useState(false);
-  
+
   const handleLogout = () => {
     // Set redirecting state to true
     setIsRedirecting(true);
@@ -23,10 +23,11 @@ const Header = () => {
 
   return (
     <div className="flex justify-between items-center p-4 bg-gray-50 shadow-md">
-      <div>
-        <h1 className="text-xs text-gray-600">{greeting}!</h1>
-        <p className="text-xl font-semibold">Augustine</p>
+      <div className="flex flex-col sm:flex-row sm:items-center sm:space-x-4">
+        <h1 className="text-xs text-gray-600 sm:text-sm">{greeting}!</h1>
+        <p className="text-xl font-semibold sm:text-2xl">Augustine</p>
       </div>
+
       <div className="flex items-center space-x-5">
         {/* Notification Bell with Tooltip */}
         <button className="relative text-2xl text-gray-600 group">

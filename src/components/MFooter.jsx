@@ -1,17 +1,18 @@
 import React from 'react';
+import { Link } from 'react-router-dom';
 import '../index.css';
 
 function Footer() {
   return (
     <footer className="bg-black text-white py-12">
-      <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center footer">
+      <div className="container mx-auto px-6 md:px-12 flex flex-col md:flex-row justify-between items-center md:items-start footer">
         
         {/* Left Section - Logo and Description */}
         <div className="text-center md:text-left md:w-1/3 mb-6 md:mb-0 footer">
-        <img
+          <img
             src="/gaia_logo.png"
             alt="Personal Logo"
-            className="h-7 md:h-8"
+            className="h-7 md:h-8 mb-4 md:mb-0"
           />
           <p className="text-gray-400">
             Join us in making a difference by protecting our oceans. Every step we take helps preserve marine life.
@@ -19,23 +20,13 @@ function Footer() {
         </div>
         
         {/* Center Section - Navigation Links */}
-        <div className="flex justify-center md:justify-start gap-6 mb-6 md:mb-0 footerMid">
-          <a href="#home" className="text-gray-400 hover:text-white">Home</a>
-          <a href="#campaigns" className="text-gray-400 hover:text-white">Contact us</a>
-          <a href="#events" className="text-gray-400 hover:text-white">About</a>
-          <a href="#about" className="text-gray-400 hover:text-white">Gaia</a>
+        <div className="flex flex-col md:flex-row justify-center md:justify-start gap-6 mb-6 md:mb-0 footerMid">
+          <Link to="/home" className="text-gray-400 hover:text-white">Home</Link>
+          <Link to="/contact" className="text-gray-400 hover:text-white">Contact Us</Link>
+          <Link to="/about" className="text-gray-400 hover:text-white">About</Link>
+          <Link to="/gaia" className="text-gray-400 hover:text-white">Gaia</Link>
         </div>
         
-        {/* Right Section - Call to Action */}
-        <div className="text-center md:text-right md:w-1/3">
-          <p className="text-gray-400 mb-2">Stay updated on our latest campaigns</p>
-          <a
-            href="#subscribe"
-            className="text-white bg-blue-500 hover:bg-blue-600 px-4 py-2 rounded"
-          >
-            Subscribe
-          </a>
-        </div>
       </div>
 
       {/* Bottom Section */}
