@@ -84,7 +84,7 @@ const Sidebar = () => {
   ];
 
   return (
-    <div className="w-16 md:w-56 fixed left-0 top-0 z-10 h-screen border-r pt-8 px-4 bg-white">
+    <div className="w-16 md:w-56 fixed left-0 top-0 z-10 h-screen border-r pt-8 px-4 bg-white ">
       {/* Logo */}
       <div className="mb-8">
         <img src="/GaiaLogo.jpg" alt="logo" className="hidden md:flex" />
