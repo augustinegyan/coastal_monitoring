@@ -95,7 +95,7 @@ const AnalyticsDashboard = () => {
         {/* Bar Charts */}
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <div className="mb-4">
-            <h2 className="text-lg font-semibold">Revenue</h2>
+            <h2 className="text-lg font-semibold">Param1</h2>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={barData}>
@@ -109,7 +109,7 @@ const AnalyticsDashboard = () => {
 
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <div className="mb-4">
-            <h2 className="text-lg font-semibold">Users</h2>
+            <h2 className="text-lg font-semibold">Param2</h2>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={barData}>
@@ -123,7 +123,7 @@ const AnalyticsDashboard = () => {
 
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <div className="mb-4">
-            <h2 className="text-lg font-semibold">Orders</h2>
+            <h2 className="text-lg font-semibold">Param3</h2>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={barData}>
@@ -165,7 +165,7 @@ const AnalyticsDashboard = () => {
         {/* Line Chart */}
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <div className="mb-4">
-            <h2 className="text-lg font-semibold">Trend</h2>
+            <h2 className="text-lg font-semibold">TOverview</h2>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <LineChart data={lineData}>
