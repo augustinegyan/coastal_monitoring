@@ -434,3 +434,218 @@ const Signin = () => {
 };
 
 export default Signin;
+
+
+
+// import React, { useState, useEffect } from 'react';
+// import { Eye, EyeOff } from 'lucide-react';
+// import { Link, useNavigate } from 'react-router-dom';
+
+// const Signup = () => {
+//   const navigate = useNavigate();
+//   const [showPassword, setShowPassword] = useState(false);
+//   const [currentSlide, setCurrentSlide] = useState(0);
+//   const [formData, setFormData] = useState({
+//     fullName: '',
+//     email: '',
+//     password: '',
+//     confirmPassword: ''
+//   });
+//   const [error, setError] = useState('');
+
+//   const slides = [
+//     {
+//       image: "ocean.jpg",
+//       title: "State of the Art ,",
+//       subtitle: "Buoy Monitoring System"
+//     },
+//     {
+//       image: "data_analytics.jpg",
+//       title: "Real Time Monitoring,",
+//       subtitle: "Prosessional Dashboard for Analytics"
+//     },
+//     {
+//       image: "slide.png",
+//       title: "Powered By ,",
+//       subtitle: "GAIA Boards Variant"
+//     }
+//   ];
+
+//   useEffect(() => {
+//     const timer = setInterval(() => {
+//       setCurrentSlide((prev) => (prev + 1) % slides.length);
+//     }, 5000);
+
+//     return () => clearInterval(timer);
+//   }, []);
+
+//   const handleInputChange = (e) => {
+//     setFormData({
+//       ...formData,
+//       [e.target.name]: e.target.value
+//     });
+//     setError('');
+//   };
+
+//   const handleSubmit = (e) => {
+//     e.preventDefault();
+    
+//     // Basic validation
+//     if (!formData.fullName || !formData.email || !formData.password || !formData.confirmPassword) {
+//       setError('All fields are required');
+//       return;
+//     }
+
+//     if (formData.password !== formData.confirmPassword) {
+//       setError('Passwords do not match');
+//       return;
+//     }
+
+//     if (formData.password.length < 6) {
+//       setError('Password must be at least 6 characters long');
+//       return;
+//     }
+
+//     // Here you would typically make an API call to register the user
+//     // For demo purposes, we'll just redirect to signin
+//     navigate('/signin');
+//   };
+
+//   return (
+//     <div className="w-full h-screen flex">
+//       {/* Left Side - Slideshow Section */}
+//       <div className="hidden lg:block lg:w-1/2 relative overflow-hidden">
+//         {slides.map((slide, index) => (
+//           <div
+//             key={index}
+//             className={`absolute inset-0 w-full h-full transform transition-transform duration-1000 ease-in-out ${
+//               index === currentSlide 
+//                 ? 'translate-x-0' 
+//                 : index < currentSlide 
+//                   ? '-translate-x-full' 
+//                   : 'translate-x-full'
+//             }`}
+//           >
+//             <div className="absolute inset-0">
+//               <img 
+//                 src={slide.image}
+//                 alt={`Slide ${index + 1}`}
+//                 className="absolute inset-0 w-full h-full object-cover mix-blend-overlay"
+//               />
+//             </div>
+//             <div className="relative h-full flex flex-col justify-end p-12">
+//               <div className="absolute bottom-0 left-0 right-0 h-64 bg-gradient-to-t from-black/50 to-transparent" />
+//               <div className="relative z-10 text-white">
+//                 <h2 className="text-4xl font-semibold mb-2 text-shadow">{slide.title}</h2>
+//                 <h2 className="text-4xl font-semibold mb-8 text-shadow">{slide.subtitle}</h2>
+//               </div>
+//             </div>
+//           </div>
+//         ))}
+//         <div className="absolute bottom-12 left-12 flex gap-3 z-20">
+//           {slides.map((_, index) => (
+//             <button
+//               key={index}
+//               onClick={() => setCurrentSlide(index)}
+//               className={`w-12 h-1.5 rounded-full transition-all duration-300 ${
+//                 index === currentSlide ? 'bg-white' : 'bg-white/50'
+//               }`}
+//             />
+//           ))}
+//         </div>
+//       </div>
+
+//       {/* Right Side - Form Section */}
+//       <div className="w-full lg:w-1/2 flex flex-col h-full bg-white">
+//         <div className="flex justify-between items-center p-6">
+//           <img
+//             src="GaiaLogo.jpg"
+//             alt="Logo"
+//             className="w-90 h-16 object-cover"
+//           />
+//           <Link to="/">
+//             <button className="px-4 py-2 bg-blue-600 text-white rounded-md hover:bg-blue-300 transition">
+//               Back to HomePage
+//             </button>
+//           </Link>
+//         </div>
+
+//         <div className="flex-1 flex flex-col justify-center px-8 sm:px-12 lg:px-16 xl:px-24">
+//           <div className="w-full max-w-xl mx-auto">
+//             <h1 className="text-3xl font-bold text-gray-800 mb-6">
+//               Create an account
+//             </h1>
+//             <p className="text-gray-600 mb-8">
+//               Already have an account?{' '}
+//               <Link to="/signin" className="text-blue-600 hover:text-blue-700 font-semibold">
+//                 Sign in
+//               </Link>
+//             </p>
+
+//             {error && (
+//               <div className="mb-4 p-3 bg-red-100 border border-red-400 text-red-700 rounded">
+//                 {error}
+//               </div>
+//             )}
+
+//             <form onSubmit={handleSubmit} className="space-y-4">
+//               <input
+//                 type="text"
+//                 name="fullName"
+//                 value={formData.fullName}
+//                 onChange={handleInputChange}
+//                 placeholder="Full Name"
+//                 className="w-full px-4 py-4 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+//               />
+
+//               <input
+//                 type="email"
+//                 name="email"
+//                 value={formData.email}
+//                 onChange={handleInputChange}
+//                 placeholder="Email"
+//                 className="w-full px-4 py-4 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+//               />
+
+//               <div className="relative">
+//                 <input
+//                   type={showPassword ? "text" : "password"}
+//                   name="password"
+//                   value={formData.password}
+//                   onChange={handleInputChange}
+//                   placeholder="Password"
+//                   className="w-full px-4 py-4 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+//                 />
+//                 <button
+//                   type="button"
+//                   onClick={() => setShowPassword(!showPassword)}
+//                   className="absolute right-4 top-1/2 -translate-y-1/2 text-gray-500 hover:text-gray-700"
+//                 >
+//                   {showPassword ? <EyeOff size={22} /> : <Eye size={22} />}
+//                 </button>
+//               </div>
+
+//               <input
+//                 type={showPassword ? "text" : "password"}
+//                 name="confirmPassword"
+//                 value={formData.confirmPassword}
+//                 onChange={handleInputChange}
+//                 placeholder="Confirm Password"
+//                 className="w-full px-4 py-4 rounded-xl border border-gray-300 focus:border-blue-500 focus:ring-2 focus:ring-blue-200 outline-none transition"
+//               />
+
+//               <button
+//                 type="submit"
+//                 className="w-full bg-blue-600 text-white py-4 rounded-xl text-lg font-semibold hover:bg-blue-700 transition duration-200"
+//               >
+//                 Create Account
+//               </button>
+//             </form>
+//           </div>
+//         </div>
+//       </div>
+//     </div>
+//   );
+// };
+
+// export default Signup;

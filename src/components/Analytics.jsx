@@ -95,7 +95,7 @@ const AnalyticsDashboard = () => {
         {/* Bar Charts */}
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <div className="mb-4">
-            <h2 className="text-lg font-semibold">Param1</h2>
+            <h2 className="text-lg font-semibold">BOD_mg/L</h2>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={barData}>
@@ -109,7 +109,7 @@ const AnalyticsDashboard = () => {
 
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <div className="mb-4">
-            <h2 className="text-lg font-semibold">Param2</h2>
+            <h2 className="text-lg font-semibold">COD_mg/L</h2>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={barData}>
@@ -123,7 +123,7 @@ const AnalyticsDashboard = () => {
 
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <div className="mb-4">
-            <h2 className="text-lg font-semibold">Param3</h2>
+            <h2 className="text-lg font-semibold">NO3_mg/L-N</h2>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <BarChart data={barData}>
@@ -139,7 +139,7 @@ const AnalyticsDashboard = () => {
         {[1, 2, 3, 4].map((index) => (
           <div key={index} className="bg-white p-4 rounded-lg shadow-sm">
             <div className="mb-4">
-              <h2 className="text-lg font-semibold">Metric {index + 3}</h2>
+              <h2 className="text-lg font-semibold">Metrics {index + 3}</h2>
             </div>
             <ResponsiveContainer width="100%" height={200}>
               <PieChart>
@@ -165,7 +165,7 @@ const AnalyticsDashboard = () => {
         {/* Line Chart */}
         <div className="bg-white p-4 rounded-lg shadow-sm">
           <div className="mb-4">
-            <h2 className="text-lg font-semibold">TOverview</h2>
+            <h2 className="text-lg font-semibold">Overview</h2>
           </div>
           <ResponsiveContainer width="100%" height={200}>
             <LineChart data={lineData}>

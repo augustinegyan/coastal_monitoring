@@ -6,6 +6,7 @@ import ThinMap from "../../components/ThinMap";
 import Table from "../../components/Table";
 import Compass from "../../components/Compass";
 import 'leaflet/dist/leaflet.css';
+import '../../index.css'
 
 
 
@@ -18,10 +19,13 @@ const Home = () =>{
       <ThinMap/>
       <Table/>
       <Compass/>
-      
+     
       {/* Rest of your dashboard content */}
     </div>
     )
 }
 
 export default Home 
+
+
+

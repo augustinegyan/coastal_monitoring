@@ -1,6 +1,6 @@
 import React from 'react';
 
-const GaugeChart = ({ value, maxValue = 100, label, color = "#3B82F6" }) => {
+const GaugeChart = ({ value, maxValue = 100, label, color = "#3B82F6", unit = "" }) => {
   const percentage = (value / maxValue) * 100;
   const angle = (percentage * 180) / 100;
 
@@ -20,7 +20,12 @@ const GaugeChart = ({ value, maxValue = 100, label, color = "#3B82F6" }) => {
   };
 
   return (
-    <div className="flex-shrink-0 w-full sm:w-1/2 md:w-1/4 lg:w-1/5 xl:w-1/6 bg-white rounded-lg shadow-sm p-3">
+    <div className="flex-shrink-0 w-full sm:w-1/2 md:w-1/4 lg:w-1/5 xl:w-1/6 bg-white rounded-lg shadow-sm p-3 relative">
+      {/* Unit label at the top-left of the card */}
+      <div className="absolute top-2 left-2 text-xs font-semibold text-gray-500">
+        {unit}
+      </div>
+
       <svg width="100%" height="120" viewBox="0 0 200 120">
         {/* Background arc */}
         <path
@@ -68,11 +73,11 @@ const GaugeChart = ({ value, maxValue = 100, label, color = "#3B82F6" }) => {
 
 const GaugeSlider = () => {
   const parameters = [
-    { value: 57.28, label: "Parameter 1", color: "#3B82F6" },
-    { value: 33.1, label: "Parameter 2", color: "#2563EB" },
-    { value: 82.5, label: "Parameter 3", color: "#1D4ED8" },
-    { value: 45.9, label: "Parameter 4", color: "#1E40AF" },
-    { value: 91.2, label: "Parameter 5", color: "#1E3A8A" },
+    { value: 57.28, label: "Temperature", color: "#3B82F6", unit: "°C" },
+    { value: 33.1, label: "Turbidity", color: "#2563EB", unit: "NTY" },
+    { value: 82.5, label: "pH Level", color: "#1D4ED8", unit: "pH" },
+    { value: 45.9, label: "Humidity", color: "#1E40AF", unit: "%" },
+    { value: 91.2, label: "Tide Level", color: "#1E3A8A", unit: "m" },
   ];
 
   return (
@@ -86,6 +91,7 @@ const GaugeSlider = () => {
               value={param.value}
               label={param.label}
               color={param.color}
+              unit={param.unit}
             />
           ))}
         </div>

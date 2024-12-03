@@ -78,3 +78,4 @@ const ThinMap = () => {
 };
 
 export default ThinMap;
+

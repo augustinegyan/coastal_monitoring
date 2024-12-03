@@ -96,7 +96,7 @@ const TChart = () => {
         <Line data={data} options={options} />
       </div>
       <div style={{ marginLeft: "20px", marginTop: "-10px" }}> {/* Raised the toggles to align higher */}
-        <h4 style={{ fontSize: "14px", color: "#333", marginBottom: "10px" }}>Parameters</h4>
+        <h4 style={{ fontSize: "14px", color: "#333", marginBottom: "10px", fontWeight: "bold"}}>Parameters</h4>
         <div style={{ display: "flex", flexDirection: "column" }}>
           <label style={{ display: "flex", alignItems: "center", fontSize: "12px", color: "#333", marginBottom: "5px" }}>
             <input
